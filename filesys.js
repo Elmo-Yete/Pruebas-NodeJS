@@ -48,10 +48,33 @@ const fs = require("fs")
 
 // ------ PARA CREAR DIRECTORIOS ---
 
-fs.mkdir("./prueba",(error)=> {
+// fs.mkdir("./prueba",(error)=> {
+//     if (error) {
+//         console.log("no jalo")
+//         return;
+//     }
+//     console.log("se creo el directorio")
+// })
+
+// -------TRAE LOS NOMBRES DE ARCHIVOS DE UN DIRECTORIO -------
+
+fs.readdir("./prueba","utf8",(error,file)=>{
     if (error) {
-        console.log("no jalo")
+        console.log("no se leyo")
         return;
     }
-    console.log("se creo el directorio")
+    console.log("se leyeron estos",file)
+    file.forEach(file => {
+        readFiles(`./prueba/${file}`)
+    })
 })
+
+const readFiles = (archivo) => {
+    fs.readFile(archivo,"utf8",(error,data)=>{
+    if(error) {
+        console.log(error);
+        return;
+    } 
+    console.log("La data es:",data);
+    })
+}
