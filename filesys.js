@@ -11,8 +11,17 @@ const fs = require("fs")
 
 // ------- PARA ESCRIBIR ARCHIVOS ----
 
-fs.writeFile("test1","Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500","utf8",(error)=>{
+// fs.writeFile("test1","Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500","utf8",(error)=>{
+//     if (error) {
+//         console.log("no pos no jalo")
+//          return;
+//     }
+// })
+
+// -------- PARA APENDARLE TEXTO A ARCHIVOS --------
+fs.appendFile("./hola.txt","en teoria esto es texto que se tendria que agregar al txt",(error)=> {
     if (error) {
-        console.log("no pos no jalo")
+        console.log("no jalo x2")
+        return;
     }
 })
