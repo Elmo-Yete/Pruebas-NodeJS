@@ -19,9 +19,39 @@ const fs = require("fs")
 // })
 
 // -------- PARA APENDARLE TEXTO A ARCHIVOS --------
-fs.appendFile("./hola.txt","en teoria esto es texto que se tendria que agregar al txt",(error)=> {
+// fs.appendFile("./hola.txt","en teoria esto es texto que se tendria que agregar al txt",(error)=> {
+//     if (error) {
+//         console.log("no jalo x2")
+//         return;
+//     }
+// })
+
+
+// ---------- PARA BORRAR ARCHIVOS... CREO -----
+
+// fs.unlink("./test1",(error)=> {
+//     if (error) {
+//         console.log("pos se rompio")
+//         return;
+//     }
+//     console.log("simon se borro")
+// })
+
+// ------ PARA COPIAR ARCHIVOS -----
+
+// fs.copyFile("hola.txt","hola_copy.txt",(error)=> {
+//     if (error) {
+//         console.log("no se copio")
+//     }
+//     console.log("se copio con exito")
+// })
+
+// ------ PARA CREAR DIRECTORIOS ---
+
+fs.mkdir("./prueba",(error)=> {
     if (error) {
-        console.log("no jalo x2")
+        console.log("no jalo")
         return;
     }
+    console.log("se creo el directorio")
 })
