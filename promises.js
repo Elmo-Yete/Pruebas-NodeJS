@@ -76,9 +76,11 @@ readRecipe(cake)                            // esto recibe el obj original en fa
                 .then((cakeDough)=> {       // masa = true
                     getBake(cakeDough)
                     .then((cakeBaked)=> {   // hornear = true
-                        console.log("el pastel esta en",cakeBaked)
+                        // console.log("el pastel esta en",cakeBaked)
                         decore(cakeBaked)
-                        .then((console.log(cakeBaked)))   // se espera ejecutar sin error  decorar = true
+                        .then((cakeBaked)=> {
+                            console.log("test1:",cakeBaked)
+                        })   // se espera ejecutar sin error  decorar = true
                     })
                     .catch((error)=> {
                         console.log("el error es:",error)
