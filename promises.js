@@ -24,7 +24,7 @@ const getIngredients = (cakeRead) => {
     return new Promise ((resolve,reject)=> {
         setTimeout(()=>{
             cakeRead.ingredientes = true;
-            if (!cakeRead.ingredinetes) {
+            if (!cakeRead.ingredientes) {
                 reject("No hay ingredientes")
             }
             resolve(cakeRead)
@@ -76,7 +76,9 @@ readRecipe(cake)                            // esto recibe el obj original en fa
                 .then((cakeDough)=> {       // masa = true
                     getBake(cakeDough)
                     .then((cakeBaked)=> {   // hornear = true
-                        decore(cakeBaked)   // se espera ejecutar sin error  decorar = true
+                        console.log("el pastel esta en",cakeBaked)
+                        decore(cakeBaked)
+                        .then((console.log(cakeBaked)))   // se espera ejecutar sin error  decorar = true
                     })
                     .catch((error)=> {
                         console.log("el error es:",error)
